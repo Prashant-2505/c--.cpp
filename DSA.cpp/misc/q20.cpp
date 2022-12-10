@@ -1,0 +1,37 @@
+// gfg peak element
+
+#include <bits/stdc++.h>
+using namespace std;
+int peak(int A[], int n)
+{
+    if (n == 1)
+    {
+        return 0;
+    }
+    if (A[n-1]>A[n-2])
+    {
+    return 1;
+    }
+    for (int i = 1; i < n - 1; i++)
+    {
+
+        if (A[i] >= A[i + 1] && A[i] >= A[i - 1])
+            
+        {
+            return 1;
+        }
+    }
+    return 0;
+}
+int main()
+{
+    int n;
+    cin >> n;
+    int A[n];
+    for (int i = 0; i < n; i++)
+    {
+        cin >> A[i];
+    }
+cout<<peak(A,n);
+    return 0;
+}
