@@ -1,4 +1,7 @@
-// creation of tree
+// type of order traveral
+// 1 in-order traveral
+// 2 pre-order traveral
+// 3 post-order traveral
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -35,6 +38,7 @@ node *buildTree(node *root)
     root->right = buildTree(root->right);
     return root;
 }
+
 
 void levelOrderTransversal(node *root)
 {
@@ -73,12 +77,63 @@ void levelOrderTransversal(node *root)
     }
 }
 
+
+
+
+void in_order_traversal(node *root)     // LNR
+{
+    if (root == NULL)
+    {
+        return;
+    }
+
+    in_order_traversal(root->left);
+    cout << root->data << " ";
+    in_order_traversal(root->right);
+}
+
+void pre_order_traversal(node *root)    // NLR
+{
+    if (root == NULL)
+    {
+        return;
+    }
+
+    cout << root->data << " ";
+    pre_order_traversal(root->left);
+    pre_order_traversal(root->right);
+}
+
+void post_order_traversal(node *root)  //LRN
+{
+    if (root == NULL)
+    {
+        return;
+    }
+
+    post_order_traversal(root->left);
+    post_order_traversal(root->right);
+    cout << root->data << " ";
+}
+
 int main()
 {
 
     node *root = NULL;
     root = buildTree(root);
-    cout<<"Print the level order traversal"<<endl;
+
+  cout<<"Print the level order traversal"<<endl;
     levelOrderTransversal(root);
+
+    cout << "Print the inorder traversal" << endl;
+    in_order_traversal(root);
+    cout << endl;
+
+    cout << "Print the  preorder traversal" << endl;
+    pre_order_traversal(root);
+    cout << endl;
+
+    cout << "Print the postorder traversal" << endl;
+    post_order_traversal(root);
     return 0;
 }
