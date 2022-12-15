@@ -1,6 +1,6 @@
 // Height of binary tree
 
-\
+
 #include <bits/stdc++.h>
 using namespace std;
 
