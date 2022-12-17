@@ -1,39 +1,16 @@
-#include <bits/stdc++.h>
-using namespace std;
-
+#include<bits/stdc++.h>
+using namespace std ;
+   
 int main()
 {
-    int arr[9]{-1, 4, 3, -2, 9, 4, -1, 3, -5};
-    int n = 9;
-    vector<int> v;
+map<int ,int> M;
 
-    for (int i = 0; i < n; i++)
-    {
-        if (arr[i] > 0)
-        {
-            v.push_back(arr[i]);
-        }
-    }
-
-
-    for (int i = 0; i < n; i++)
-    {
-        if (arr[i] < 0)
-        {
-            v.push_back(arr[i]);
-        }
-    }
-
-   
-
-    for (int i = 0; i < n; i++)
-    {
-       arr[i]=v[i];
-    }
-   
-  for (int i = 0; i < n; i++)
-    {
-      cout<<arr[i]<<" ";
-    }
-    return 0;
+M[1] = 100;
+M[1] = 400;
+M[2] = 200;
+for(auto it : M)
+{
+    cout<<it.first<<" "<<it.second<<endl;
+}
+return 0;
 }
