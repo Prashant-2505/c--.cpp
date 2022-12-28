@@ -1,16 +1,9 @@
 #include<bits/stdc++.h>
-using namespace std ;
-   
-int main()
-{
-map<int ,int> M;
-
-M[1] = 100;
-M[1] = 400;
-M[2] = 200;
-for(auto it : M)
-{
-    cout<<it.first<<" "<<it.second<<endl;
-}
-return 0;
+using namespace  std;
+int main() {
+    vector<int> price = {13, 5, 1, 8, 21, 2};
+    int k = 3;
+    int ans = max (price, k);
+    cout << "Maximum tastiness: " << ans << endl;
+    return 0;
 }
