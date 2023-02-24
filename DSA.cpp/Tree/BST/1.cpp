@@ -147,6 +147,18 @@ Node *deletefromBST(Node *root, int val)
         root->right = deletefromBST(root->right, val);
         return root;
     }
+    return NULL;
+}
+
+void inorder(Node *root, vector<int> &res)
+{
+    if (root == NULL)
+    {
+        return;
+    }
+    inorder(root->left, res);
+    res.push_back(root->data);
+    inorder(root->right, res);
 }
 
 int main()
@@ -162,5 +174,24 @@ int main()
     cout << "after deleteion " << endl;
     levelOrderTraversal(root);
 
+    
+
+
+    // check it is bst or not
+    
+    vector<int> res;
+    inorder(root, res);
+    for (int i = 0; i < res.size(); i++)
+    {
+        cout << res[i] << " ";
+    }
+
+    for(int i=1;i<res.size();i++)
+    {
+        if(res[i-1]<res[i])
+        {
+            cout<<" not bst"<<endl;
+        }
+    }
     return 0;
 }
