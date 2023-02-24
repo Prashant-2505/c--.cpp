@@ -122,7 +122,7 @@ Node *deletefromBST(Node *root, int val)
         // right
         if (root->right != NULL && root->left == NULL)
         {
-            Node *temp = root->left;
+            Node *temp = root->right;
             delete root;
             return temp;
         }
