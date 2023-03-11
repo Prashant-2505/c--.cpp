@@ -1,3 +1,5 @@
+// adjecency matrix using vector of vector
+
 #include <iostream>
 #include <vector>
 
@@ -45,7 +47,6 @@ int main() {
    int m;
    cout << " enter the no of edges" << endl;
    cin >> m;
-   int num_vertices;
 
    Graph G(n);
 
